@@ -1,0 +1,17 @@
+server:
+  port: 1112
+
+zuul:
+  routes:
+    apis:
+      path: /services/**
+      serviceId: apis
+      stripPrefix: true
+
+ribbon:
+  eureka:
+    enabled: false
+
+apis:
+  ribbon:
+    listOfServers: http://localhost:1111
